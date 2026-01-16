@@ -931,11 +931,168 @@
         }
         
         /* ============================ */
+        /* NEW: BANNER & LOGO UPLOAD SECTION */
+        /* ============================ */
+        
+        .branding-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 4px solid #2e7d32;
+        }
+        
+        .branding-section h3 {
+            font-size: 1.5rem;
+            color: #1b5e20;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .branding-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .branding-card {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 25px;
+            border: 2px dashed #c8e6c9;
+            transition: all 0.3s;
+        }
+        
+        .branding-card:hover {
+            border-color: #2e7d32;
+            background: #f1f8e9;
+        }
+        
+        .branding-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+        
+        .branding-header i {
+            font-size: 28px;
+            color: #2e7d32;
+            background: #e8f5e9;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .branding-header h4 {
+            font-size: 1.2rem;
+            color: #1b5e20;
+        }
+        
+        .banner-preview {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+            border: 2px solid #e8f5e9;
+        }
+        
+        .banner-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-preview {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            margin: 0 auto 20px;
+            border: 3px solid #e8f5e9;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        
+        .logo-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .upload-btn {
+            display: block;
+            width: 100%;
+            padding: 14px 20px;
+            background: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-size: 16px;
+        }
+        
+        .upload-btn:hover {
+            background: #1b5e20;
+            transform: translateY(-2px);
+        }
+        
+        .upload-btn i {
+            margin-right: 8px;
+        }
+        
+        .remove-btn {
+            display: block;
+            width: 100%;
+            padding: 12px 20px;
+            background: #ffebee;
+            color: #d32f2f;
+            border: 1px solid #ffcdd2;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .remove-btn:hover {
+            background: #ffcdd2;
+        }
+        
+        .branding-description {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            line-height: 1.5;
+        }
+        
+        /* ============================ */
         /* RESPONSIVE DESIGN FOR MOBILE */
         /* ============================ */
         
         @media (max-width: 1200px) {
             .dashboard-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .branding-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1142,6 +1299,34 @@
             .add-section i {
                 font-size: 48px;
             }
+            
+            /* Branding Section Mobile Fixes */
+            .branding-section {
+                padding: 20px;
+            }
+            
+            .branding-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .branding-card {
+                padding: 20px;
+            }
+            
+            .banner-preview {
+                height: 150px;
+            }
+            
+            .logo-preview {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .upload-btn {
+                padding: 16px;
+                font-size: 16px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1211,6 +1396,16 @@
             .upload-placeholder i {
                 font-size: 40px;
             }
+            
+            .branding-section h3 {
+                font-size: 1.3rem;
+            }
+            
+            .branding-header i {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
         }
         
         @media (max-width: 400px) {
@@ -1226,6 +1421,10 @@
             .save-btn {
                 padding: 14px 16px;
                 font-size: 0.95rem;
+            }
+            
+            .branding-header h4 {
+                font-size: 1.1rem;
             }
         }
         
@@ -1243,6 +1442,10 @@
                 font-size: 0.75rem;
                 padding: 6px 10px;
             }
+            
+            .branding-section {
+                padding: 15px;
+            }
         }
         
         /* Fix for iOS Safari input zoom */
@@ -1250,7 +1453,8 @@
             .form-group input,
             .form-group select,
             .form-group textarea,
-            .category-input-group input {
+            .category-input-group input,
+            .upload-btn {
                 font-size: 16px !important; /* Prevent zoom on focus */
             }
         }
@@ -1259,15 +1463,64 @@
         @media screen and (-webkit-min-device-pixel-ratio: 0) {
             select:focus,
             textarea:focus,
-            input:focus {
+            input:focus,
+            button {
                 font-size: 16px !important;
+            }
+        }
+        
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1100;
+            background: #2e7d32;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 0;
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-menu-toggle" id="mobileMenuToggle">
+        <i class="fas fa-bars"></i>
+    </div>
+    
     <!-- Sidebar Navigation -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <!-- Sidebar Logo - Fancy Style from Homepage -->
         <div class="logo-container">
             <div class="logo">
@@ -1512,6 +1765,59 @@
                 </div>
             </div>
 
+            <!-- NEW: Branding Section (Banner & Logo Upload) -->
+            <div class="branding-section">
+                <h3><i class="fas fa-store"></i> Restaurant Branding</h3>
+                <div class="branding-grid">
+                    <div class="branding-card">
+                        <div class="branding-header">
+                            <i class="fas fa-image"></i>
+                            <h4>Menu Page Banner</h4>
+                        </div>
+                        <div class="banner-preview" id="bannerPreview">
+                            <!-- Banner image will be displayed here -->
+                            <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: white; background: linear-gradient(135deg, #2e7d32, #1b5e20);">
+                                <i class="fas fa-image" style="font-size: 48px; opacity: 0.7;"></i>
+                                <span style="margin-left: 15px; font-size: 18px; font-weight: 600;">Caterix Restaurant</span>
+                            </div>
+                        </div>
+                        <input type="file" id="bannerUpload" accept="image/*" style="display: none;" onchange="uploadBanner(this.files[0])">
+                        <button class="upload-btn" onclick="document.getElementById('bannerUpload').click()">
+                            <i class="fas fa-upload"></i> Upload Banner Image
+                        </button>
+                        <button class="remove-btn" onclick="removeBanner()" id="removeBannerBtn" style="display: none;">
+                            <i class="fas fa-trash"></i> Remove Banner
+                        </button>
+                        <p class="branding-description">
+                            Upload a banner image that will appear at the top of your menu page. Recommended size: 1200×300px.
+                        </p>
+                    </div>
+                    
+                    <div class="branding-card">
+                        <div class="branding-header">
+                            <i class="fas fa-camera"></i>
+                            <h4>Restaurant Logo</h4>
+                        </div>
+                        <div class="logo-preview" id="logoPreview">
+                            <!-- Logo image will be displayed here -->
+                            <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-utensils" style="font-size: 48px; color: #2e7d32;"></i>
+                            </div>
+                        </div>
+                        <input type="file" id="logoUpload" accept="image/*" style="display: none;" onchange="uploadLogo(this.files[0])">
+                        <button class="upload-btn" onclick="document.getElementById('logoUpload').click()">
+                            <i class="fas fa-upload"></i> Upload Logo
+                        </button>
+                        <button class="remove-btn" onclick="removeLogo()" id="removeLogoBtn" style="display: none;">
+                            <i class="fas fa-trash"></i> Remove Logo
+                        </button>
+                        <p class="branding-description">
+                            Upload your restaurant logo. It will appear in your menu and on customer receipts. Recommended: 500×500px transparent PNG.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Custom Category Management -->
             <div class="category-section">
                 <div class="category-input-group">
@@ -1571,6 +1877,34 @@
                 alert('You have 3 new notifications:\n1. New booking from Sarah Johnson\n2. Payment received for order #CT-7839\n3. Event reminder: Corporate Lunch tomorrow');
             });
             
+            // Mobile menu toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            mobileMenuToggle.addEventListener('click', function() {
+                sidebar.classList.toggle('active');
+                // Change icon
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+                        sidebar.classList.remove('active');
+                        mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                        mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                    }
+                }
+            });
+            
             // Navigation functionality
             const navItems = document.querySelectorAll('.nav-item');
             const devMessage = document.getElementById('devMessage');
@@ -1590,6 +1924,13 @@
                 // Update active nav item
                 navItems.forEach(i => i.classList.remove('active'));
                 dashboardLink.classList.add('active');
+                
+                // Close mobile menu on mobile
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                    mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                }
             }
             
             // Function to show menu manager
@@ -1601,6 +1942,13 @@
                 // Update active nav item
                 navItems.forEach(i => i.classList.remove('active'));
                 menuItemsLink.classList.add('active');
+                
+                // Close mobile menu on mobile
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                    mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                    mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                }
                 
                 // Initialize menu manager if not already initialized
                 if (typeof menuManagerInitialized === 'undefined') {
@@ -1657,6 +2005,13 @@
                         };
                         
                         header.textContent = pageTitles[pageName] || 'Caterix Dashboard';
+                        
+                        // Close mobile menu on mobile
+                        if (window.innerWidth <= 768) {
+                            sidebar.classList.remove('active');
+                            mobileMenuToggle.querySelector('i').classList.remove('fa-times');
+                            mobileMenuToggle.querySelector('i').classList.add('fa-bars');
+                        }
                     });
                 }
             });
@@ -1706,8 +2061,9 @@
                 });
             });
             
-            // Initialize menu manager
+            // Initialize menu manager and branding
             initializeMenuManager();
+            loadBrandingData();
         });
         
         // ============================
@@ -1718,6 +2074,8 @@
         let categories = ['Best Sellers', 'Appetizers', 'Momos'];
         let selectedCategory = categories[0];
         let menuManagerInitialized = false;
+        let bannerImage = null;
+        let logoImage = null;
         
         function initializeMenuManager() {
             if (menuManagerInitialized) return;
@@ -1726,9 +2084,28 @@
             renderCategories();
             renderMenuItems();
             
-            // Enter key to add category
-            document.getElementById('newCategoryInput').addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') addCategory();
+            // Enter key to add category - FIXED FOR MOBILE
+            const categoryInput = document.getElementById('newCategoryInput');
+            if (categoryInput) {
+                categoryInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault(); // Prevent form submission on mobile
+                        addCategory();
+                    }
+                });
+                
+                // Also handle touch events for mobile
+                categoryInput.addEventListener('touchstart', function(e) {
+                    // Focus the input on touch for better mobile experience
+                    this.focus();
+                });
+            }
+            
+            // Prevent default form submission on mobile
+            document.querySelectorAll('form').forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                });
             });
             
             menuManagerInitialized = true;
@@ -1736,8 +2113,13 @@
         
         function renderCategories() {
             const chipsContainer = document.getElementById('categoryChips');
+            if (!chipsContainer) return;
+            
             chipsContainer.innerHTML = categories.map((category, index) => `
-                <div class="category-chip ${selectedCategory === category ? 'active' : ''}" onclick="selectCategory('${category}', event)">
+                <div class="category-chip ${selectedCategory === category ? 'active' : ''}" 
+                     onclick="selectCategory('${category}', event)"
+                     ontouchstart="this.classList.add('touch-active')"
+                     ontouchend="this.classList.remove('touch-active')">
                     ${category}
                     <span class="delete-chip" onclick="deleteCategory(${index}, event)">×</span>
                 </div>
@@ -1746,19 +2128,27 @@
         
         function addCategory() {
             const input = document.getElementById('newCategoryInput');
+            if (!input) return;
+            
             const newCat = input.value.trim();
             if (newCat && !categories.includes(newCat) && newCat.length <= 25) {
                 categories.push(newCat);
                 input.value = '';
                 renderCategories();
                 selectCategory(newCat, null);
+                
+                // Focus back on input for better mobile UX
+                setTimeout(() => input.focus(), 100);
             } else if (newCat.length > 25) {
                 alert('Category name must be 25 characters or less');
+            } else if (categories.includes(newCat)) {
+                alert('This category already exists');
             }
         }
         
         function deleteCategory(index, event) {
-            event.stopPropagation();
+            if (event) event.stopPropagation();
+            
             if (categories.length > 1) {
                 const categoryToDelete = categories[index];
                 if (confirm(`Delete category "${categoryToDelete}"? Items in this category will be moved to "${categories[0]}"`)) {
@@ -1769,6 +2159,9 @@
                             item.category = categories[0];
                         }
                     });
+                    if (selectedCategory === categoryToDelete) {
+                        selectedCategory = categories[0];
+                    }
                     renderCategories();
                     renderMenuItems();
                 }
@@ -1778,12 +2171,18 @@
         }
         
         function selectCategory(category, event) {
+            if (event) event.stopPropagation();
             selectedCategory = category;
-            document.querySelectorAll('.category-chip').forEach(chip => chip.classList.remove('active'));
-            if (event && event.currentTarget) {
-                event.currentTarget.classList.add('active');
-            }
+            renderCategories();
             renderMenuItems();
+            
+            // Scroll to top on mobile when selecting category
+            if (window.innerWidth <= 768) {
+                setTimeout(() => {
+                    const menuGrid = document.getElementById('menuGrid');
+                    if (menuGrid) menuGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
         }
         
         // Add new item
@@ -1803,11 +2202,18 @@
                 description: ''
             });
             renderMenuItems();
+            
+            // Focus on the first input in the new item
+            setTimeout(() => {
+                const firstInput = document.querySelector('.menu-item-card:first-child input');
+                if (firstInput) firstInput.focus();
+            }, 100);
         }
         
         // Render menu items for selected category
         function renderMenuItems() {
             const grid = document.getElementById('menuGrid');
+            if (!grid) return;
             
             let filteredItems = menuItems.filter(item => item.category === selectedCategory);
             
@@ -1817,7 +2223,7 @@
                         <i class="fas fa-utensils" style="font-size: 64px; margin-bottom: 24px; opacity: 0.5; color: #2e7d32;"></i>
                         <h3 style="color: #1b5e20;">No items in ${selectedCategory}</h3>
                         <p>Add your first menu item to this category</p>
-                        <button class="btn btn-primary" onclick="addNewItem()" style="margin-top: 20px;">
+                        <button class="btn btn-primary" onclick="addNewItem()" style="margin-top: 20px; padding: 12px 24px;">
                             <i class="fas fa-plus"></i> Add First Item
                         </button>
                     </div>
@@ -1845,19 +2251,23 @@
                             <div class="form-group">
                                 <label>Dish Name</label>
                                 <input type="text" value="${item.name}" placeholder="Enter dish name" 
-                                       onchange="updateField(${globalIndex}, 'name', this.value)">
+                                       onchange="updateField(${globalIndex}, 'name', this.value)"
+                                       oninput="updateField(${globalIndex}, 'name', this.value)">
                             </div>
                             <div class="form-group">
                                 <label>Price</label>
                                 <input type="number" value="${item.price}" placeholder="0.00" step="0.01" 
-                                       onchange="updateField(${globalIndex}, 'price', this.value)">
+                                       onchange="updateField(${globalIndex}, 'price', this.value)"
+                                       oninput="updateField(${globalIndex}, 'price', this.value)">
                             </div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea placeholder="Describe ingredients, servings, etc." onchange="updateField(${globalIndex}, 'description', this.value)">${item.description}</textarea>
+                                <textarea placeholder="Describe ingredients, servings, etc." 
+                                          onchange="updateField(${globalIndex}, 'description', this.value)"
+                                          oninput="updateField(${globalIndex}, 'description', this.value)">${item.description}</textarea>
                             </div>
                             <div class="form-group">
                                 <label>Category</label>
@@ -1879,7 +2289,9 @@
         
         // Update field
         function updateField(index, field, value) {
-            menuItems[index][field] = value;
+            if (index >= 0 && index < menuItems.length) {
+                menuItems[index][field] = value;
+            }
         }
         
         // Update image
@@ -1892,11 +2304,22 @@
                 return;
             }
             
+            // Check file type
+            if (!file.type.match('image.*')) {
+                alert('Please select an image file (JPG, PNG, etc.)');
+                return;
+            }
+            
             const reader = new FileReader();
             reader.onload = (e) => {
                 const item = menuItems.find(i => i.id === id);
-                if (item) item.image = e.target.result;
-                renderMenuItems();
+                if (item) {
+                    item.image = e.target.result;
+                    renderMenuItems();
+                }
+            };
+            reader.onerror = () => {
+                alert('Error reading the file. Please try again.');
             };
             reader.readAsDataURL(file);
         }
@@ -1914,21 +2337,30 @@
             // Filter out empty items
             const validItems = menuItems.filter(item => item.name.trim() !== '');
             
-            console.log('Saving menu:', { categories, menuItems: validItems });
+            console.log('Saving menu:', { categories, menuItems: validItems, bannerImage, logoImage });
             
             // Here you would typically send data to server
             // For demo, we'll just show an alert
-            alert(`✅ Menu Saved Successfully!\n\nCategories: ${categories.length}\nMenu Items: ${validItems.length}\n\nData ready for backend integration.`);
+            let message = `✅ Menu Saved Successfully!\n\n`;
+            message += `Categories: ${categories.length}\n`;
+            message += `Menu Items: ${validItems.length}\n`;
+            if (bannerImage) message += `✓ Banner image uploaded\n`;
+            if (logoImage) message += `✓ Logo uploaded\n`;
+            message += `\nData ready for backend integration.`;
             
-            // Optional: Simulate saving to localStorage
+            alert(message);
+            
+            // Save to localStorage
             localStorage.setItem('caterixMenuData', JSON.stringify({
                 categories,
                 menuItems: validItems,
+                bannerImage,
+                logoImage,
                 savedAt: new Date().toISOString()
             }));
         }
         
-        // Load saved data from localStorage (if exists)
+        // Load saved data from localStorage
         function loadSavedData() {
             const saved = localStorage.getItem('caterixMenuData');
             if (saved) {
@@ -1936,15 +2368,142 @@
                     const data = JSON.parse(saved);
                     if (data.categories) categories = data.categories;
                     if (data.menuItems) menuItems = data.menuItems;
+                    if (data.bannerImage) bannerImage = data.bannerImage;
+                    if (data.logoImage) logoImage = data.logoImage;
                     if (categories.length > 0) selectedCategory = categories[0];
                 } catch (e) {
-                    console.log('No saved data found');
+                    console.log('No saved data found or data corrupted');
                 }
             }
         }
         
-        // Load saved data when menu manager is initialized
-        loadSavedData();
+        // ============================
+        // BRANDING FUNCTIONS (Banner & Logo)
+        // ============================
+        
+        function uploadBanner(file) {
+            if (!file) return;
+            
+            // Check file size (10MB limit for banner)
+            if (file.size > 10 * 1024 * 1024) {
+                alert('Banner file size must be less than 10MB');
+                return;
+            }
+            
+            // Check file type
+            if (!file.type.match('image.*')) {
+                alert('Please select an image file (JPG, PNG, etc.)');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                bannerImage = e.target.result;
+                updateBannerPreview();
+                // Show remove button
+                document.getElementById('removeBannerBtn').style.display = 'block';
+                alert('Banner uploaded successfully!');
+            };
+            reader.onerror = () => {
+                alert('Error reading the file. Please try again.');
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        function uploadLogo(file) {
+            if (!file) return;
+            
+            // Check file size (5MB limit for logo)
+            if (file.size > 5 * 1024 * 1024) {
+                alert('Logo file size must be less than 5MB');
+                return;
+            }
+            
+            // Check file type
+            if (!file.type.match('image.*')) {
+                alert('Please select an image file (JPG, PNG, etc.)');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                logoImage = e.target.result;
+                updateLogoPreview();
+                // Show remove button
+                document.getElementById('removeLogoBtn').style.display = 'block';
+                alert('Logo uploaded successfully!');
+            };
+            reader.onerror = () => {
+                alert('Error reading the file. Please try again.');
+            };
+            reader.readAsDataURL(file);
+        }
+        
+        function removeBanner() {
+            if (confirm('Remove banner image?')) {
+                bannerImage = null;
+                updateBannerPreview();
+                // Hide remove button
+                document.getElementById('removeBannerBtn').style.display = 'none';
+            }
+        }
+        
+        function removeLogo() {
+            if (confirm('Remove logo?')) {
+                logoImage = null;
+                updateLogoPreview();
+                // Hide remove button
+                document.getElementById('removeLogoBtn').style.display = 'none';
+            }
+        }
+        
+        function updateBannerPreview() {
+            const preview = document.getElementById('bannerPreview');
+            if (!preview) return;
+            
+            if (bannerImage) {
+                preview.innerHTML = `<img src="${bannerImage}" alt="Restaurant Banner">`;
+            } else {
+                preview.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: white; background: linear-gradient(135deg, #2e7d32, #1b5e20);">
+                        <i class="fas fa-image" style="font-size: 48px; opacity: 0.7;"></i>
+                        <span style="margin-left: 15px; font-size: 18px; font-weight: 600;">Caterix Restaurant</span>
+                    </div>
+                `;
+            }
+        }
+        
+        function updateLogoPreview() {
+            const preview = document.getElementById('logoPreview');
+            if (!preview) return;
+            
+            if (logoImage) {
+                preview.innerHTML = `<img src="${logoImage}" alt="Restaurant Logo">`;
+            } else {
+                preview.innerHTML = `
+                    <div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                        <i class="fas fa-utensils" style="font-size: 48px; color: #2e7d32;"></i>
+                    </div>
+                `;
+            }
+        }
+        
+        function loadBrandingData() {
+            loadSavedData();
+            updateBannerPreview();
+            updateLogoPreview();
+            
+            // Show/hide remove buttons based on existing images
+            if (bannerImage) {
+                document.getElementById('removeBannerBtn').style.display = 'block';
+            }
+            if (logoImage) {
+                document.getElementById('removeLogoBtn').style.display = 'block';
+            }
+        }
+        
+        // Initialize branding on load
+        loadBrandingData();
     </script>
 </body>
 </html>
